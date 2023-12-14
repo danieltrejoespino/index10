@@ -21,6 +21,6 @@ app.use('/static', express.static(path.join(__dirname, 'node_modules/')));
 
 
 app.listen(port, () => {
-    console.log(__dirname);
+    // console.log(__dirname);
   console.log(`Example app listening on port ${port}`)
 })

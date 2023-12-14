@@ -1,6 +1,6 @@
 const express = require('express')
 const router=express.Router()
-const {home} = require('../controllers/controller')
+const {home,get_data} = require('../controllers/controller')
 router.use(express.json())
 
 
@@ -10,9 +10,13 @@ router.use(express.json())
 // })
 
 router.get('/', home.main)
+router.get('/home', home.main)
+router.get('/index10', home.index10)
+router.get('/extensiones', home.extensiones)
 
 
 
+router.get('/data_extensiones', get_data.extensiones)
 
 
 module.exports = router

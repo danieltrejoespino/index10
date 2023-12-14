@@ -1,0 +1,257 @@
+[
+  {
+    "extension": "1508",
+    "usuario": "Cris",
+    "unidad": "DSA"
+  },
+  {
+    "extension": 1066,
+    "usuario": "Charlie",
+    "unidad": "MC"
+  },
+  {
+    "extension": 1153,
+    "usuario": "Raymundo",
+    "unidad": "MC"
+  },
+  {
+    "extension": 1044,
+    "usuario": "Bety Arvizu",
+    "unidad": "MC"
+  },
+  {
+    "extension": 1014,
+    "usuario": "Leidy Mata",
+    "unidad": "MC"
+  },
+  {
+    "extension": 1041,
+    "usuario": "Gerson Eleazar",
+    "unidad": "MC"
+  },
+  {
+    "extension": 1046,
+    "usuario": "Karla",
+    "unidad": "MC"
+  },
+  {
+    "extension": 1023,
+    "usuario": "Yolanda",
+    "unidad": "MC"
+  },
+  {
+    "extension": 1114,
+    "usuario": "Blanca Alegria",
+    "unidad": "Amexinsurance"
+  },
+  {
+    "extension": 1082,
+    "usuario": "Nayma Hernandez",
+    "unidad": "Amexinsurance"
+  },
+  {
+    "extension": 1118,
+    "usuario": "Fernando Vicente",
+    "unidad": "Predictivo"
+  },
+  {
+    "extension": 1106,
+    "usuario": "Cruz",
+    "unidad": "Predictivo"
+  },
+  {
+    "extension": 1136,
+    "usuario": "Edgar",
+    "unidad": "Predictivo"
+  },
+  {
+    "extension": 1155,
+    "usuario": "Yessi",
+    "unidad": "Predictivo"
+  },
+  {
+    "extension": 1064,
+    "usuario": "Marisol Morales",
+    "unidad": "Servidores"
+  },
+  {
+    "extension": 1154,
+    "usuario": "Angelica Jimenez",
+    "unidad": "Servidores"
+  },
+  {
+    "extension": 1105,
+    "usuario": "Donovan Mujica",
+    "unidad": "Servidores"
+  },
+  {
+    "extension": 1048,
+    "usuario": "Miguel Gutierrez",
+    "unidad": "Tecnología"
+  },
+  {
+    "extension": 1107,
+    "usuario": "Fernando Perez",
+    "unidad": "BD"
+  },
+  {
+    "extension": 1507,
+    "usuario": "Eduardo Colin",
+    "unidad": "BD"
+  },
+  {
+    "extension": 1101,
+    "usuario": "Cristian Maya",
+    "unidad": "Redes"
+  },
+  {
+    "extension": 1511,
+    "usuario": "Richar",
+    "unidad": "Redes"
+  },
+  {
+    "extension": 1049,
+    "usuario": "Daniel",
+    "unidad": "Redes"
+  },
+  {
+    "extension": 1172,
+    "usuario": "Ulises Juarez",
+    "unidad": "IM"
+  },
+  {
+    "extension": 1176,
+    "usuario": "David",
+    "unidad": "IM"
+  },
+  {
+    "extension": 1169,
+    "usuario": "Daniel Martinez",
+    "unidad": "IM"
+  },
+  {
+    "extension": 1174,
+    "usuario": "Fernando Olvera",
+    "unidad": "IM"
+  },
+  {
+    "extension": 1175,
+    "usuario": "Nayeli German",
+    "unidad": "Nominas"
+  },
+  {
+    "extension": 1037,
+    "usuario": "Gabriela Morales",
+    "unidad": "Nominas"
+  },
+  {
+    "extension": 1530,
+    "usuario": "Brenda",
+    "unidad": "Validacion"
+  },
+  {
+    "extension": 1077,
+    "usuario": "Lino Aguilar",
+    "unidad": "AmexTDC Online"
+  },
+  {
+    "extension": 1011,
+    "usuario": "Katia",
+    "unidad": "Laborales"
+  },
+  {
+    "extension": 1028,
+    "usuario": "Abel Ramirez",
+    "unidad": "Laborales"
+  },
+  {
+    "extension": 1045,
+    "usuario": "Angelica Hernandez",
+    "unidad": "Laborales"
+  },
+  {
+    "extension": 1034,
+    "usuario": "Luis Casas",
+    "unidad": "NYA"
+  },
+  {
+    "extension": 1088,
+    "usuario": "Rosa Maria Artigas",
+    "unidad": "NYA"
+  },
+  {
+    "extension": 1091,
+    "usuario": "Marina",
+    "unidad": "NYA"
+  },
+  {
+    "extension": 1086,
+    "usuario": "Paulina Perez",
+    "unidad": "NYA"
+  },
+  {
+    "extension": 1047,
+    "usuario": "Samo",
+    "unidad": "NYA"
+  },
+  {
+    "extension": 1021,
+    "usuario": "Julio Gaona",
+    "unidad": "Monitoreo"
+  },
+  {
+    "extension": 1527,
+    "usuario": "Lizbeth Eulogio",
+    "unidad": "Monitoreo"
+  },
+  {
+    "extension": 1095,
+    "usuario": "Mayra Lopez",
+    "unidad": "Monitoreo"
+  },
+  {
+    "extension": 1163,
+    "usuario": "Alejandro Araujo",
+    "unidad": "Monitoreo"
+  },
+  {
+    "extension": 1182,
+    "usuario": "Idalia",
+    "unidad": "Soporte Técnico"
+  },
+  {
+    "extension": 1120,
+    "usuario": "Ana Zuñiga",
+    "unidad": "Soporte Técnico"
+  },
+  {
+    "extension": 1186,
+    "usuario": "Nayeli Velazco",
+    "unidad": "Soporte Técnico"
+  },
+  {
+    "extension": 1126,
+    "usuario": "Cesar",
+    "unidad": "Soporte Técnico"
+  },
+  {
+    "extension": 1020,
+    "usuario": "Nalleli Nieto",
+    "unidad": "Soporte Técnico"
+  },
+  {
+    "extension": 1010,
+    "usuario": "Raul Sanchez",
+    "unidad": "DH"
+  },
+  {
+    "extension": 1031,
+    "usuario": "Alan",
+    "unidad": "Openpay"
+  },
+  {
+    "extension": 1012,
+    "usuario": "Ale",
+    "unidad": "Openpay"
+  }
+]
