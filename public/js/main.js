@@ -1,0 +1,1 @@
+console.log('importacion correcta del main');
