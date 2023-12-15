@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-  getEXT()
+  // getEXT()
+  getEXT_gridjs()
+  
 });
 
-const showEXT=document.querySelector('#showEXT')
+// const showEXT=document.querySelector('#showEXT')
+const wrapper=document.querySelector('#wrapper')
 
 
 function __getEXT() {
@@ -80,3 +83,47 @@ function getEXT() {
   });
 
 }
+
+
+function getEXT_gridjs() {
+  wrapper.innerHTML=''
+  fetch('/data_extensiones') 
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('No se pudo completar la solicitud.');
+    }
+    return response.json(); // Si esperas una respuesta JSON
+  })
+  .then(data => {    
+    if (data.length === 0) {
+      // alert('sin datos')
+      return false
+    }
+
+    const columnsNames =Object.keys(data[0])
+
+    const dataArray = data.map(item => [item.Ext, item.Usuario, item.Unidad]);
+    console.log(columnsNames);
+    new gridjs.Grid({
+      search : true,
+      columns: columnsNames,
+      data:dataArray
+    }).render(wrapper);
+
+  })
+  .catch(error => {
+    console.error('Ocurrió un error:', error);
+  });
+
+}
+ 
+
+const grid = new Grid({
+  columns: ['Title', 'Director', 'Producer'],
+  server: {
+    url: 'https://swapi.dev/api/films/',
+    then: data => data.results.map(movie => 
+      [movie.title, movie.director, movie.producer]
+    )
+  } 
+});
