@@ -21,18 +21,22 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/socket_', express.static(path.join(__dirname, 'node_modules/socket.io/client-dist')));
-
 app.use('/static', express.static(path.join(__dirname, 'node_modules/')));
-
 
 
 io.on('connection', (socket) => {
   console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+  
+  socket.on('chat message', (msg) => {
+    console.log('message: ' + msg);
+    io.emit('chat message', msg);
+  });
 });
 
-
-app.listen(port, () => {
+server.listen(port, () => {
     // console.log(__dirname);
   console.log(`Example app listening on port ${port}`)
 })

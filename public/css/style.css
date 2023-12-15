@@ -1,20 +1,19 @@
 /* Modo claro */
-:root {
+/* :root {
   --body-bg: #FFFFFF;
   --body-color: #000000;
 }
-/* Modo oscuro */
-@media (prefers-color-scheme: dark) {
+ @media (prefers-color-scheme: dark) {
   :root {
       --body-bg: #000000;
       --body-color: #FFFFFF;
   }
-}
+} */
 
-body {
+/* body {
   background: var(--body-bg);
   color: var(--body-color);
-}
+} */
 
 
 .l_row_style{
