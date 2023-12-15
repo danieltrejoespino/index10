@@ -13,6 +13,9 @@ const home = {
     },    
     extensiones : (req,res) => {
       res.render('extensiones',{menuItems,prueba})
+    },
+    chat : (req,res) => {
+      res.render('chat',{menuItems,prueba})
     }      
 }
 
@@ -38,7 +41,7 @@ const get_data = {
     })
     .on('end', () => {
       // El evento 'end' se dispara cuando se ha completado la lectura del archivo CSV
-      console.log('Datos leídos:', csvData);
+      // console.log('Datos leídos:', csvData);
       res.json(csvData)      
     });
 
