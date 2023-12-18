@@ -99,16 +99,30 @@ function getEXT_gridjs() {
       // alert('sin datos')
       return false
     }
-
-    const columnsNames =Object.keys(data[0])
-
-    const dataArray = data.map(item => [item.Ext, item.Usuario, item.Unidad]);
-    // console.log(columnsNames);
+    
     new gridjs.Grid({
       search : true,
-      columns: columnsNames,
-      data:dataArray
+      resizable: true,
+      sort: true,
+      pagination: {
+        limit: 10,
+      },
+      columns: Object.keys(data[0]),
+      data: data.map(item => [item.Ext, item.Usuario, item.Unidad]),
+      language: {
+        'search': {
+          'placeholder': 'Buscar...',
+        },
+        'pagination': {
+          'previous': 'Anterior',
+          'next': 'Siguiente',
+          'showing': 'Mostrando',
+          'results': () => 'Resultados',
+        },
+      }
     }).render(wrapper);
+
+  
 
   })
   .catch(error => {
@@ -117,5 +131,9 @@ function getEXT_gridjs() {
 
 }
  
-
+[
+  "Ext",
+  "Usuario",
+  "Unidad"
+]
 

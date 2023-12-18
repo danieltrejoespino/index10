@@ -22,3 +22,28 @@
   overflow: auto;
 
  }
+
+.area_encriptar{
+  height: 200px;
+  border: 1px solid #ccc; 
+}
+
+.area_encriptar .area_style {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; 
+  resize: none;
+}
+
+
+.boton-copy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
