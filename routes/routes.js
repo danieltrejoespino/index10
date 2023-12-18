@@ -1,6 +1,7 @@
 const express = require('express')
 const router=express.Router()
 const {home,get_data} = require('../controllers/controller')
+const {test} = require('../controllers/oracle_controller')
 router.use(express.json())
 
 
@@ -17,6 +18,8 @@ router.get('/chat', home.chat)
 router.get('/encriptar', home.encriptar)
 router.get('/uploads', home.uploads)
 
+// ORACLE
+router.get('/test', test.test)
 
 
 router.get('/data_extensiones', get_data.extensiones)
