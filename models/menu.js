@@ -3,6 +3,7 @@ const menuItems = [
   { label: 'extensiones', href: '/extensiones' },
   { label: 'chat', href: '/chat' },
   { label: 'encriptar', href: '/encriptar' },
+  { label: 'uploads', href: '/uploads' },
 ];
 
 const prueba = [  

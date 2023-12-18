@@ -1,0 +1,60 @@
+<%- include("templates/headers",{tittle:'CRUD TOOLS'}) %>
+<%- include("templates/navbar", { menuItems: menuItems }) %>
+ 
+<div class="row text-center">
+  <div class="col-lg-12">    
+    <div class="py-5">
+      <label for="images" class="drop-container" id="dropcontainer">
+      <span class="drop-title">Suelta los archivos aqui</span>
+      o
+      <input type="file" id="formFileLg" required>
+    </label>
+
+    <button id="btn_image" class="btn btn-info mt-3">
+      <i class=" fa-solid fa-upload fa-bounce fa-lg"></i>
+      Subir</button>
+    </div>  
+  </div>
+  <div class="col-lg-4 text-center">
+      <h5 class="py-5">Imagenes en el servidor</h5>    
+      <table class="table" >
+        <tr>
+          <th>Nombre</th>
+          <th>Vista</th>
+          <th></th>       
+          <th></th>       
+        </tr>
+        <tbody id="showImg"></tbody>
+      </table>
+  </div> 
+  <div class="col-lg-4 text-center">
+    <h5 class="py-5">Archivos en el servidor</h5>        
+    <table class="table">
+      <tr>
+        <th>Nombre</th>        
+        <th></th>
+        <th></th>
+      </tr>
+      <tbody id="showFile"></tbody>
+    </table>
+  </div>
+  <div class="col-lg-4 text-center">
+    <h5 class="py-5">Audio en el servidor</h5>        
+    <table class="table">
+      <tr>
+        <th>Nombre</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tbody id="showAudio"></tbody>
+    </table>
+  </div>   
+  
+</div>
+ 
+
+<script src="./js/uploads.js"></script>
+
+
+
+<%- include("templates/footer") %>

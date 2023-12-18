@@ -19,6 +19,9 @@ const home = {
     },
     encriptar : (req,res) => {
       res.render('encriptar',{menuItems,prueba})
+    },  
+    uploads : (req,res) => {
+      res.render('uploads',{menuItems,prueba})
     }      
 }
 

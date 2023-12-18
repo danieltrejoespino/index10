@@ -15,6 +15,7 @@ router.get('/index10', home.index10)
 router.get('/extensiones', home.extensiones)
 router.get('/chat', home.chat)
 router.get('/encriptar', home.encriptar)
+router.get('/uploads', home.uploads)
 
 
 
