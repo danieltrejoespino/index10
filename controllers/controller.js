@@ -16,6 +16,12 @@ const home = {
     },
     chat : (req,res) => {
       res.render('chat',{menuItems,prueba})
+    },
+    encriptar : (req,res) => {
+      res.render('encriptar',{menuItems,prueba})
+    },  
+    uploads : (req,res) => {
+      res.render('uploads',{menuItems,prueba})
     }      
 }
 
