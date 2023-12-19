@@ -31,13 +31,10 @@ io.on('connection', (socket) => {
     console.log('user disconnected');
   });
   
-  socket.on('chat message', (msg) => {
-
-    const remitenteID = socket.id;
-    console.log('ID del remitente:', remitenteID);
-
-    console.log('message: ' + msg);
+  socket.on('chat message', (msg) => {    
+    console.log(msg);
     io.emit('chat message', msg);
+
   });
 });
 
@@ -45,3 +42,4 @@ server.listen(PORT, () => {
     // console.log(__dirname);
   console.log(`Example app listening on port ${PORT}`)
 })
+
