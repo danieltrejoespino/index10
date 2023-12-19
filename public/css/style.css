@@ -123,3 +123,31 @@ input[type=file]::file-selector-button:hover {
 .drop-container.drag-active .drop-title {
   color: #222;
 }
+
+
+
+
+
+/* chat */
+.chat_body{
+  height: 800px;
+  overflow: auto;
+}
+.text_msg{
+  height: 400px;
+  overflow: auto;
+}
+.chat_button{
+  /* height: 100px; */
+  overflow: auto;
+}
+.chat_msg{
+  /* height: 500px; */
+  /* overflow: auto; */
+}
+
+.tittle_chats {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid black;
+}

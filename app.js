@@ -6,7 +6,8 @@ const { join } = require('node:path');
 const { Server } = require('socket.io');
 
 const app = express()
-const port = 3000
+const PORT=process.env.PORT || 3000;
+
 const server = createServer(app);
 const io = new Server(server);
 
@@ -36,7 +37,7 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(port, () => {
+server.listen(PORT, () => {
     // console.log(__dirname);
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${PORT}`)
 })
