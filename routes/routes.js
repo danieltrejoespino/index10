@@ -1,7 +1,7 @@
 const express = require('express')
 const router=express.Router()
 const {home,get_data} = require('../controllers/controller')
-const {test} = require('../controllers/oracle_controller')
+const {test,index10} = require('../controllers/oracle_controller')
 router.use(express.json())
 
 
@@ -20,6 +20,9 @@ router.get('/uploads', home.uploads)
 
 // ORACLE
 router.get('/test', test.test)
+router.get('/index_data', index10.index10)
+
+
 
 
 router.get('/data_extensiones', get_data.extensiones)

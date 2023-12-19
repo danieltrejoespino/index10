@@ -131,9 +131,3 @@ function getEXT_gridjs() {
 
 }
  
-[
-  "Ext",
-  "Usuario",
-  "Unidad"
-]
-
