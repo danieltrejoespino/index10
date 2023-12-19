@@ -141,13 +141,44 @@ input[type=file]::file-selector-button:hover {
   /* height: 100px; */
   overflow: auto;
 }
-.chat_msg{
-  /* height: 500px; */
-  /* overflow: auto; */
+ 
+ 
+.message-blue {
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #A8DDFD;
+  width: 200px;
+  height: 50px;
+  text-align: left;
+  font: 400 .9em 'Open Sans', sans-serif;
+  border: 1px solid #97C6E3;
+  border-radius: 10px;
 }
 
-.tittle_chats {
-  text-decoration: none;
-  color: black;
-  border-bottom: 1px solid black;
+
+.message-content {
+  padding: 0;
+  margin: 0;
+}
+
+.message-timestamp-left {
+  position: absolute;
+  font-size: .85em;
+  font-weight: 300;
+  bottom: 5px;
+  left: 5px;
+}
+
+.message-blue:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid #A8DDFD;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  top: 0;
+  left: -15px;
 }

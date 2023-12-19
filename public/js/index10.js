@@ -24,6 +24,24 @@ function getData() {
     }
     
     console.log(data);
+    
+    const objetoTransformado = data.map(item => {
+      return {             
+        "clave": item[0],
+        "nombre": item[1], 
+        "apellido_paterno": item[2], 
+        "apellido_materno": item[3], 
+        "fecha_nac": item[4], 
+        "nombre_departamento": item[5], 
+        "EMPRESA": item[6], 
+        "equipo": item[7], 
+        "hora": item[8], 
+        "status_id": item[9],        
+        "Foto": item[10],
+      };
+    });
+    console.log(objetoTransformado);
+
     new gridjs.Grid({
       search : true,
       resizable: true,
@@ -31,9 +49,8 @@ function getData() {
       pagination: {
         limit: 10,
       },
-      // columns: Object.keys(data[0]),
-      columns: ['clave', 'nombre'],
-      data: data.map(item => [item.clave, item.nombre]),
+      columns: Object.keys(objetoTransformado[0]),
+      data: objetoTransformado,
       language: {
         'search': {
           'placeholder': 'Buscar...',

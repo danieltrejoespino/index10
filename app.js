@@ -32,6 +32,10 @@ io.on('connection', (socket) => {
   });
   
   socket.on('chat message', (msg) => {
+
+    const remitenteID = socket.id;
+    console.log('ID del remitente:', remitenteID);
+
     console.log('message: ' + msg);
     io.emit('chat message', msg);
   });

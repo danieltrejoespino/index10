@@ -99,6 +99,7 @@ function getEXT_gridjs() {
       // alert('sin datos')
       return false
     }
+    console.log(data);
     
     new gridjs.Grid({
       search : true,

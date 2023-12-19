@@ -12,8 +12,19 @@ form.addEventListener('submit', (e) => {
 });
 
 socket.on('chat message', (msg) => {
-  const item = document.createElement('li');
-  item.textContent = msg;
-  messages.appendChild(item);
+  let new_msg = `
+    <div class="message-blue">
+      <p class="message-content">${msg}</p>
+      <div class="message-timestamp-left">Dani 13:37</div>
+    </div>
+  `
+  messages.innerHTML += new_msg
+  
+
+  
+  // const item = document.createElement('li');
+  // item.classList.add('li_chat');
+  // item.textContent = msg;
+  // messages.appendChild(item);
   window.scrollTo(0, document.body.scrollHeight);
 });
