@@ -15,7 +15,10 @@
   color: var(--body-color);
 } */
 
-
+html, body {
+  height: 100%;
+  margin: 0;
+}
 .l_row_style{
   height:800px;
   width: 100%;
@@ -23,17 +26,24 @@
 
  }
 
-.area_encriptar{
+ .area_encriptar {
   height: 200px;
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
+  /* width: 100%; */
+  box-sizing: border-box; /* Esto asegura que el border y el padding no se sumen al tamaño total */
 }
 
-.area_encriptar .area_style {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box; 
+.area_style1 {
   resize: none;
+  height: 100%;
+  box-sizing: border-box; /* Asegúrate de usar la misma configuración de box-sizing que en el contenedor padre */
 }
+.area_style{  
+  resize: none;
+  height: 100px;
+}
+
+ 
 
 
 .boton-copy {
