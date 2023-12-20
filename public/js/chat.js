@@ -20,14 +20,14 @@ socket.on('chat message', (msg) => {
     new_msg = `
     <div class="message-blue">
       <p class="message-content">${msg.contenido}</p>
-      <div class="message-timestamp-left">Dani 13:37</div>
+      <div class="message-timestamp-left">${remitente.value}</div>
     </div>
     `
   }else{
     new_msg =`
     <div class="message-orange">
     <p class="message-content">${msg.contenido}</p>
-    <div class="message-timestamp-right">Dani</div>
+    <div class="message-timestamp-right">${msg.remitente}</div>
     </div>
 
     `
