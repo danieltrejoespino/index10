@@ -144,7 +144,7 @@ input[type=file]::file-selector-button:hover {
  
  
  
-.message-blue {
+.message-me {
   position: relative;
   margin-left: 20px;
   margin-bottom: 10px;
@@ -158,7 +158,7 @@ input[type=file]::file-selector-button:hover {
   border-radius: 10px;
 }
 
-.message-orange {
+.message-other {
   position: relative;
   margin-bottom: 10px;
   margin-left: calc(100% - 240px);
@@ -193,7 +193,7 @@ input[type=file]::file-selector-button:hover {
   left: 5px;
 }
 
-.message-blue:after {
+.message-me:after {
   content: '';
   position: absolute;
   width: 0;
@@ -205,7 +205,7 @@ input[type=file]::file-selector-button:hover {
   left: -15px;
 }
 
-.message-blue:before {
+.message-me:before {
   content: '';
   position: absolute;
   width: 0;
@@ -217,7 +217,7 @@ input[type=file]::file-selector-button:hover {
   left: -17px;
 }
 
-.message-orange:after {
+.message-other:after {
   content: '';
   position: absolute;
   width: 0;
@@ -229,7 +229,7 @@ input[type=file]::file-selector-button:hover {
   right: -15px;
 }
 
-.message-orange:before {
+.message-other:before {
   content: '';
   position: absolute;
   width: 0;

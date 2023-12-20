@@ -6,8 +6,10 @@ const remitente = document.getElementById('pruebaUSER');
  
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (input.value) {
-    // socket.emit('chat message', input.value);
+  if (!remitente.value) {
+    remitente.value="Invitado"
+  }
+  if (input.value) {    
     socket.emit('chat message', { contenido: input.value, remitente: remitente.value });
     input.value = '';
   }
@@ -15,31 +17,33 @@ form.addEventListener('submit', (e) => {
 
 socket.on('chat message', (msg) => {
   console.log(msg.remitente);
-  let new_msg = ''
-  if (msg.remitente == remitente.value) {    
-    new_msg = `
-    <div class="message-blue">
-      <p class="message-content">${msg.contenido}</p>
-      <div class="message-timestamp-left">${remitente.value}</div>
-    </div>
-    `
-  }else{
-    new_msg =`
-    <div class="message-orange">
-    <p class="message-content">${msg.contenido}</p>
-    <div class="message-timestamp-right">${msg.remitente}</div>
-    </div>
-
-    `
-
-  }
- 
-  messages.innerHTML += new_msg  
-
   
-  // const item = document.createElement('li');
-  // item.classList.add('li_chat');
-  // item.textContent = msg;
-  // messages.appendChild(item);
-  window.scrollTo(0, document.body.scrollHeight);
+  let class_chat = msg.remitente == remitente.value ? 'message-me' : 'message-other'  
+  let user_chat = msg.remitente == remitente.value ? remitente.value : msg.remitente
+  // let  new_msg = `
+  //   <div class="${class_chat}">
+  //     <p class="message-content">${msg.contenido}</p>
+  //     <div class="message-timestamp-left">${user_chat}</div>
+  //   </div>
+  //   `  
+  
+  //   messages.innerHTML += new_msg 
+  let new_msg = document.createElement('div');
+  new_msg.className = class_chat;
+  let messageContent = document.createElement('p');
+  messageContent.className = 'message-content';
+  messageContent.textContent = msg.contenido;
+  new_msg.appendChild(messageContent);
+
+  let timestampLeft = document.createElement('div');
+  timestampLeft.className = 'message-timestamp-left';
+  timestampLeft.textContent = user_chat;
+  new_msg.appendChild(timestampLeft);
+
+  messages.appendChild(new_msg);
+
+    var chatButton = document.querySelector('.text_msg');
+    chatButton.scrollTop = chatButton.scrollHeight;  
+  
 });
+
