@@ -27,16 +27,22 @@ const index10  = {
       const sql = `
       SELECT      
       r.clave,
-      u.NOMBRE || ' ' || u.APELLIDO_PATERNO || ' ' || u.APELLIDO_MATERNO  AS NOMBRE,
-      to_char(u.fecha_nac, 'dd/mm/yyyy') AS FECHA_NAC,
-      d.nombre_departamento            
-
-    
+      u.nombre,
+      u.apellido_paterno,
+      u.apellido_materno,
+      to_char(u.fecha_nac, 'dd/mm/yyyy') fecha_nac,            
+      d.nombre_departamento,
+      E.ID_EMPRESA empresa,
+      r.equipo,          
+      TO_CHAR(R.FECHA, 'DD/MM/YYYY') FECHA,
+      R.HORA HORA,
+      u.status_id      
       FROM asistencia.registroextemp r
       left JOIN asistencia.usuarios u
       left join asistencia.departamentos d on d.id = u.departamento_id ON u.id_usuario = r.clave  
       LEFT JOIN asistencia.EMPRESAS E ON E.ID = U.EMPRESA_ID        
       WHERE TRUNC(r.FECHA) = TRUNC(SYSDATE)      
+      --AND ROWNUM   <= 2000      
       ORDER BY HORA DESC
       `;
       const result = await queries.executeQuery(sql);

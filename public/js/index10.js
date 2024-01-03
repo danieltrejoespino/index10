@@ -58,10 +58,16 @@ function getData() {
       // columns: Object.keys(objetoTransformado[0]),
       columns:       
       [
-          "CLAVE", 
-          "NOMBRE",           
-          "FECHA_NAC",           
-          "nombre_departamento",           
+          "clave", 
+          "nombre", 
+          "apellido_paterno", 
+          "apellido_materno", 
+          "fecha_nac", 
+          "nombre_departamento", 
+          "empresa", 
+          "equipo", 
+          "hora", 
+          "status_id", 
           { 
           name: 'Foto',          
           formatter: (_, row) => html(`
