@@ -1,3 +1,9 @@
+import {
+  Grid,
+  html
+} from "https://unpkg.com/gridjs?module"; 
+ 
+ 
  document.addEventListener("DOMContentLoaded", function() {
   // getEXT()
   getData()
@@ -33,7 +39,7 @@ function getData() {
         "apellido_materno": item[3], 
         "fecha_nac": item[4], 
         "nombre_departamento": item[5], 
-        "EMPRESA": item[6], 
+        "empresa": item[6], 
         "equipo": item[7], 
         "hora": item[8], 
         "status_id": item[9],        
@@ -42,14 +48,29 @@ function getData() {
     });
     console.log(objetoTransformado);
 
-    new gridjs.Grid({
+    new Grid({
       search : true,
       resizable: true,
       sort: true,
       pagination: {
         limit: 10,
       },
-      columns: Object.keys(objetoTransformado[0]),
+      // columns: Object.keys(objetoTransformado[0]),
+      columns:       
+      [
+          "CLAVE", 
+          "NOMBRE",           
+          "FECHA_NAC",           
+          "nombre_departamento",           
+          { 
+          name: 'Foto',          
+          formatter: (_, row) => html(`
+          <img src="http://172.20.1.79/fotos/Fotos/${row.cells[0].data}.jpg" style="width: 60px;"> 
+          `)
+          }
+      ],
+      
+      
       data: objetoTransformado,
       language: {
         'search': {

@@ -17,6 +17,7 @@ router.get('/extensiones', home.extensiones)
 router.get('/chat', home.chat)
 router.get('/encriptar', home.encriptar)
 router.get('/uploads', home.uploads)
+router.get('/games', home.games)
 
 // ORACLE
 router.get('/test', test.test)

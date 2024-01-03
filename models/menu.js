@@ -4,6 +4,7 @@ const menuItems = [
   { label: 'chat', href: '/chat' },
   { label: 'encriptar', href: '/encriptar' },
   { label: 'uploads', href: '/uploads' },
+  { label: 'Juegos', href: '/games' },
 ];
 
 const prueba = [  

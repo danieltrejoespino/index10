@@ -22,6 +22,9 @@ const home = {
     },  
     uploads : (req,res) => {
       res.render('uploads',{menuItems,prueba})
+    },
+    games : (req,res) => {
+      res.render('games',{menuItems,prueba})
     }      
 }
 
