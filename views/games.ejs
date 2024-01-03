@@ -1,11 +1,13 @@
 <%- include("templates/headers",{tittle:'CRUD TOOLS'}) %>
 <%- include("templates/navbar", { menuItems: menuItems}) %>
 
+<link rel="stylesheet" href="./games/style.css">
 
-<header>
+
+<div class="game_header">
   <h1 id="title">Bounce</h1>
-  <p id="expand">Expand for more games.</p>
-  <p id="select">Select a game.</p>
+  <p id="expand">Expande para mas juegos.</p>
+  <p id="select">Selecciona un juego.</p>
   <ul id="nav">
       <li><a href="#bounce" data-game="bounce" class="selected">Bounce</a></li>
       <li><a href="#snake" data-game="snake">Snake</a></li>
@@ -15,7 +17,9 @@
       <li><a href="#puzzle" data-game="puzzle">Puzzle</a></li>
       <li><a href="#spider" data-game="spider">Spider</a></li>
   </ul>
-</header>
+</div>
+
+
 <iframe id="machine"></iframe>
 
 <script>
@@ -24,7 +28,7 @@
       document.querySelector("#nav li a.selected").className = "";
       document.querySelector(`#nav li a[data-game=${game}]`).className = "selected";
       document.getElementById("title").innerHTML = game;
-      document.getElementById("machine").src = `${game}/index.html`;
+      document.getElementById("machine").src = `./games/${game}/index.html`;
       document.title = "HTML5 Games: " + game.substring(0, 1).toUpperCase() + game.substring(1);
   }
 

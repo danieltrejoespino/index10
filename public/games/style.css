@@ -24,8 +24,8 @@ body {
 /**
  * Design Styles
  */
-header {
-    position: absolute;
+.game_header {
+    /* position: absolute; */
     box-sizing: border-box;
     top: 0;
     left: 0;
@@ -38,7 +38,7 @@ header {
     border-left: 8px solid #900;
     transition: all 0.5s;
 }
-header:hover {
+.game_header:hover {
     height: 80px;
 }
 
@@ -52,9 +52,9 @@ iframe {
 
 
 /**
- * Header Styles
+ * .game_header Styles
  */
-header h1 {
+.game_header h1 {
     display: inline-block;
     margin: 0;
     padding: 8px;
@@ -64,7 +64,7 @@ header h1 {
     font-weight: normal;
     text-transform: capitalize;
 }
-header p {
+.game_header p {
     display: inline-block;
     margin: 0;
     color: #999;
@@ -78,10 +78,10 @@ header p {
     opacity: 0;
 }
 
-header:hover #expand {
+.game_header:hover #expand {
     opacity: 0;
 }
-header:hover #select {
+.game_header:hover #select {
     opacity: 1;
 }
 
@@ -112,7 +112,7 @@ header:hover #select {
     opacity: 0;
     transition: opacity 0.5s;
 }
-header:hover #nav a {
+.game_header:hover #nav a {
     opacity: 1;
 }
 #nav a:hover {
