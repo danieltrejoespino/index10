@@ -10,6 +10,9 @@ const home = {
     },
     index10 : (req,res) => {
         res.render('index10',{menuItems,prueba})
+    },  
+    index11 : (req,res) => {
+        res.render('index11',{menuItems,prueba})
     },    
     extensiones : (req,res) => {
       res.render('extensiones',{menuItems,prueba})

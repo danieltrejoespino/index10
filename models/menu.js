@@ -1,5 +1,5 @@
 const menuItems = [  
-  { label: 'index11', href: '/index10' },
+  { label: 'index11', href: '/index11' },
   { label: 'extensiones', href: '/extensiones' },
   { label: 'chat', href: '/chat' },
   { label: 'encriptar', href: '/encriptar' },
