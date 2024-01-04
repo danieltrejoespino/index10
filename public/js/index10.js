@@ -13,6 +13,11 @@ import {
 // const load_Data=document.querySelector('#load_Data')
 const wrapper=document.querySelector('#wrapper')
 
+
+ function show_img(data) {
+      alert(data)
+    }
+
   
 function getData() {
   wrapper.innerHTML=''
@@ -48,12 +53,15 @@ function getData() {
     });
     console.log(objetoTransformado);
 
-    new Grid({
+    const grid = new Grid({
       search : true,
       resizable: true,
       sort: true,
+      fixedHeader: true,
+      height: '600px',
       pagination: {
-        limit: 10,
+        limit: 30,
+        options: [5, 20, -1],
       },
       // columns: Object.keys(objetoTransformado[0]),
       columns:       
@@ -71,11 +79,26 @@ function getData() {
           { 
           name: 'Foto',          
           formatter: (_, row) => html(`
-          <img src="http://172.20.1.79/fotos/Fotos/${row.cells[0].data}.jpg" style="width: 60px;"> 
-          `)
+          <img src="http://172.20.1.79/fotos/Fotos/${row.cells[0].data}.jpg" style="width: 50px;"
+          onclick="show_img(${row.cells[0].data})"
+          >`)
           }
       ],
-      
+
+      style: {
+        table: {
+          border: '3px solid #ccc'
+        },
+        th: {
+          'background-color': 'rgb(189, 215, 202)',
+          color: '#000',
+          'border-bottom': '3px solid #ccc',
+          'text-align': 'center'
+        },
+        td: {
+          'text-align': 'center'
+        }      
+      },
       
       data: objetoTransformado,
       language: {
@@ -87,10 +110,15 @@ function getData() {
           'next': 'Siguiente',
           'showing': 'Mostrando',
           'results': () => 'Resultados',
+          'of': 'de',
+          'to': 'a',
         },
       }
-    }).render(wrapper);
+    });
+    
+    grid.render(wrapper);
 
+   
   
 
   })
@@ -100,3 +128,4 @@ function getData() {
 
 }
  
+

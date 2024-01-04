@@ -41,8 +41,7 @@ const index10  = {
       left JOIN asistencia.usuarios u
       left join asistencia.departamentos d on d.id = u.departamento_id ON u.id_usuario = r.clave  
       LEFT JOIN asistencia.EMPRESAS E ON E.ID = U.EMPRESA_ID        
-      WHERE TRUNC(r.FECHA) = TRUNC(SYSDATE)      
-      --AND ROWNUM   <= 2000      
+      WHERE TRUNC(r.FECHA) = TRUNC(SYSDATE)            
       ORDER BY HORA DESC
       `;
       const result = await queries.executeQuery(sql);
