@@ -2,6 +2,7 @@ const express = require('express')
 const router=express.Router()
 const {home,get_data} = require('../controllers/controller')
 const {test,index10} = require('../controllers/oracle_controller')
+const {test_conn} = require('../controllers/mongo_controller')
 router.use(express.json())
 
 
@@ -23,7 +24,8 @@ router.get('/games', home.games)
 router.get('/test', test.test)
 router.get('/index_data', index10.index10)
 
-
+// mongo
+router.get('/test_mongo_conn', test_conn.test_conn)
 
 
 router.get('/data_extensiones', get_data.extensiones)
