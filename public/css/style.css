@@ -240,3 +240,14 @@ input[type=file]::file-selector-button:hover {
   bottom: -1px;
   right: -17px;
 }
+
+
+
+
+
+/* estilos extensiones */
+
+.hide_table{
+  display: none;
+}
+

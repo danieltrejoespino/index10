@@ -1,19 +1,20 @@
-const db_config = require('../config/mongo_config')
+// const db_config = require('../config/mongo_config')
 const mongoose = require('mongoose');
+const  {extension} = require('../models/extension_model')
 
-
-const test_conn = {
-    test_conn : (req,res) => {
-        mongoose.connect(db_config.databaseUrl,)        
-        .then((result) => {
-            console.log('conectado');
-            res.json('conectado')
-        }).catch((err) => {
-            console.log(err);
-        });
+const crud_extensions = {
+    get_extensions : async (req,res) => {
+       try {
+        const arrayExt = await extension.find()        
+        console.log(arrayExt);
+        res.json(arrayExt)
+       } catch (error) {
+        console.log(error);
+        res.json(error)
+       } 
     }
 }
 
 module.exports = {
-    test_conn
+    crud_extensions
 }

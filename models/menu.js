@@ -1,6 +1,7 @@
 const menuItems = [  
   { label: 'index11', href: '/index11' },
   { label: 'extensiones', href: '/extensiones' },
+  { label: 'extensiones mongo', href: '/extensiones_v2' },
   { label: 'chat', href: '/chat' },
   { label: 'encriptar', href: '/encriptar' },
   // { label: 'uploads', href: '/uploads' },
