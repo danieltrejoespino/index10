@@ -4,6 +4,7 @@ const path = require('path');
 const { createServer } = require('node:http');
 const { join } = require('node:path');
 const { Server } = require('socket.io');
+const conectarBaseDeDatos  = require('./config/mongo_config')
 
 const app = express()
 const PORT=process.env.PORT || 3000;
@@ -37,6 +38,9 @@ io.on('connection', (socket) => {
 
   });
 });
+
+
+conectarBaseDeDatos()
 
 server.listen(PORT, () => {
     // console.log(__dirname);

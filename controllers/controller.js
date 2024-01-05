@@ -17,6 +17,9 @@ const home = {
     extensiones : (req,res) => {
       res.render('extensiones',{menuItems,prueba})
     },
+    extensiones_v2 : (req,res) => {
+      res.render('extensiones_v2',{menuItems,prueba})
+    },
     chat : (req,res) => {
       res.render('chat',{menuItems,prueba})
     },
