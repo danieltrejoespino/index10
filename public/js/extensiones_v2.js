@@ -55,6 +55,8 @@ function modelar_datos() {
             departamento.textContent = element.departamento;
             fila.appendChild(departamento);
             
+ 
+            
 
             if (indice % 2 === 0) {
                 fila.classList.add('table-warning');
@@ -70,7 +72,7 @@ function modelar_datos() {
         console.log(err);
     });
 }
- 
+
 
 
 input_search.addEventListener('input',(e) => {
@@ -82,7 +84,7 @@ input_search.addEventListener('input',(e) => {
     // console.log(tblRows);
     for (let i = 0; i < tbl_rows.length; i++) {
         const element = tbl_rows[i].textContent.toString().toLowerCase();
-        console.log(element);
+        // console.log(element);
         if (element.indexOf(txt_search) === -1 ) {
             tbl_rows[i].style.visibility = 'collapse'
         }else {
@@ -93,4 +95,6 @@ input_search.addEventListener('input',(e) => {
 })
 
 
- 
+function actions_ext(opcion,data) {
+    
+}

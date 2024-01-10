@@ -2,13 +2,29 @@
 <%- include("templates/navbar", { menuItems: menuItems}) %>
   <div class="mt-5 text-center">  
 
- 
-<div class="input-group mb-3">    
-    <input type="text" class="form-control" placeholder="Cuadro de busqueda" id="input_search">
-    <span class="input-group-text" id="basic-addon1">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </span>
-</div>
+
+    <div class="input-group mb-3">
+        <div class="col-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Cuadro de búsqueda" id="input_search">
+                <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+            </div>
+        </div>
+        <!-- <div class="col-4">
+            <button class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>  
+            </button>
+            <button class="btn btn-warning">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+        </div> -->
+    </div>
+
+
+
+
 <table class="table">
 <thead>
     <tr id="tablaTitulosRow">
@@ -22,7 +38,7 @@
 
 </div>
   
-
+ 
 
 
 <script src="./js/extensiones_v2.js"></script>
