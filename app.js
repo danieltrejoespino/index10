@@ -25,18 +25,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/static', express.static(path.join(__dirname, 'node_modules/')));
 
+let msg_history = []
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('Usuario conectado');
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    console.log('Usuario desconectado');
   });
   
+
+  socket.emit('chat history', msg_history);
+
+
   socket.on('chat message', (msg) => {    
     console.log(msg);
+    msg_history.push(msg);  
+    console.log(msg_history);  
     io.emit('chat message', msg);
-
   });
+
 });
 
 
