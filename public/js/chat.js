@@ -35,15 +35,20 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-socket.on('chat message', (msg) => {
-   
+socket.on('chat message', (msg) => { 
+  
   let class_chat = msg.remitente == remitente.value ? 'message-me' : 'message-other'  
   let user_chat = msg.remitente == remitente.value ? remitente.value : msg.remitente
  
 
-
   let new_msg = document.createElement('div');
   new_msg.className = class_chat;
+
+  let height_msg= msg.contenido.length<50 ? 50 : msg.contenido.length
+  new_msg.style.height= `${height_msg}px` 
+
+  
+ 
   let messageContent = document.createElement('p');
   messageContent.className = 'message-content';
   messageContent.textContent = msg.contenido;
@@ -55,6 +60,7 @@ socket.on('chat message', (msg) => {
   new_msg.appendChild(timestampLeft);
 
   messages.appendChild(new_msg);
+  
   
 
   //ir al final de los mensajes
@@ -76,6 +82,9 @@ socket.on('chat history', (msg_history) => {
     
     let new_msg = document.createElement('div');
     new_msg.className = class_chat;
+    let height_msg= element.contenido.length<50 ? 50 : element.contenido.length
+    new_msg.style.height= `${height_msg}px`
+
     let messageContent = document.createElement('p');
     messageContent.className = 'message-content';
     messageContent.textContent = element.contenido;
