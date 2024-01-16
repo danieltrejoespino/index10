@@ -89,12 +89,10 @@ messages.innerHTML += new_msg_html;
 
 
 socket.on('chat history', (msg_history) => {
-  msg_history.forEach(element => {
-    console.log(element.type);
+  msg_history.forEach(element => {    
 
     let class_chat = element.remitente == remitente.value ? 'message-me' : 'message-other';
-    let user_chat = element.remitente == remitente.value ? remitente.value : element.remitente;
-    
+    let user_chat = element.remitente == remitente.value ? remitente.value : element.remitente;    
   
     let height_msg = element.contenido.length < 50 ? 50 : element.contenido.length;
     let width_msg = element.type === 'text' ? 200 : 300;
