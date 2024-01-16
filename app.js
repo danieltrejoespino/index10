@@ -54,6 +54,26 @@ io.on('connection', (socket) => {
     io.emit('chat message', msg);
   });
 
+  socket.on('image', (data) => {
+    // console.log(data);
+    const imagePath = path.join(__dirname, 'public/uploads/img/');       
+    
+    const imageName = `image_${Date.now()}.png`;  
+    
+    const fullPath = `${imagePath}${imageName}`;  
+    
+    fs.writeFileSync(fullPath, data.contenido, 'base64');
+    
+    data.contenido = imageName
+
+    msg_history.push(data); 
+    
+    console.log(`Imagen recibida y guardada como ${fullPath}`);
+    console.log(data);
+    io.emit('chat message', data);
+
+  })
+
 });
 
 

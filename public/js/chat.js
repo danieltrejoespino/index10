@@ -2,9 +2,11 @@ const socket = io();
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const messages = document.getElementById('messages');
+const btn_actions_ = document.getElementById('btn_actions_');
 const remitente = document.getElementById('user_chat');
 const remitente_save = localStorage.getItem('nameUserChat');
- 
+const inp_file = document.getElementById('inp_file');
+
 document.addEventListener("DOMContentLoaded", function() {
   // getEXT()
   getUser()
@@ -30,38 +32,51 @@ remitente.addEventListener('change', (event) =>{
 form.addEventListener('submit', (e) => {
   e.preventDefault();  
   if (input.value) {    
-    socket.emit('chat message', { contenido: input.value, remitente: remitente.value });
+    socket.emit('chat message', { contenido: input.value, remitente: remitente.value, type : 'text' });
     input.value = '';
+  }
+  const file_upload = inp_file.files[0];
+  if (file_upload) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const imageData = e.target.result.split(',')[1];
+      // socket.emit('image', imageData);      
+      socket.emit('image', { contenido: imageData, remitente: remitente.value, type : 'img' });
+
+    };
+    reader.readAsDataURL(file_upload);
+    
+    inp_file.value=''
+    // const newFileInput = inp_file.cloneNode(true);        
+    // inp_file.parentNode.replaceChild(newFileInput, inp_file);
   }
 });
 
 socket.on('chat message', (msg) => { 
-  
+   
   let class_chat = msg.remitente == remitente.value ? 'message-me' : 'message-other'  
   let user_chat = msg.remitente == remitente.value ? remitente.value : msg.remitente
- 
 
-  let new_msg = document.createElement('div');
-  new_msg.className = class_chat;
+  let height_msg = msg.type === 'text' ? (msg.contenido.length < 50 ? 50 : msg.contenido.length) : 300;
+  let width_msg = msg.type === 'text' ? 200 : 300;
 
-  let height_msg= msg.contenido.length<50 ? 50 : msg.contenido.length
-  new_msg.style.height= `${height_msg}px` 
+  let contentHTML;
 
-  
- 
-  let messageContent = document.createElement('p');
-  messageContent.className = 'message-content';
-  messageContent.textContent = msg.contenido;
-  new_msg.appendChild(messageContent);
+  if (msg.type === 'text') {
+    contentHTML = `<p class="message-content">${msg.contenido}</p>`;
+  } else {
+    contentHTML = `<img class="message-content" style="height: 250px; width: 250px; border-radius: 50px;" src="./uploads/img/${msg.contenido}" alt="Imagen" />`;
+  }
 
-  let timestampLeft = document.createElement('div');
-  timestampLeft.className = 'message-timestamp-left';
-  timestampLeft.textContent = user_chat;
-  new_msg.appendChild(timestampLeft);
+let new_msg_html = `
+  <div class="${class_chat}" style="height: ${height_msg}px; width: ${width_msg};">
+    ${contentHTML}
+    <div class="message-timestamp-left">${user_chat}</div>
+  </div>
+`;
 
-  messages.appendChild(new_msg);
-  
-  
+messages.innerHTML += new_msg_html;
+      
 
   //ir al final de los mensajes
   const chatButton = document.querySelector('.text_msg');
@@ -75,33 +90,33 @@ socket.on('chat message', (msg) => {
 
 socket.on('chat history', (msg_history) => {
   msg_history.forEach(element => {
-    console.log(element.contenido);
+    console.log(element.type);
 
-    let class_chat = element.remitente == remitente.value ? 'message-me' : 'message-other'  
-    let user_chat = element.remitente == remitente.value ? remitente.value : element.remitente
+    let class_chat = element.remitente == remitente.value ? 'message-me' : 'message-other';
+    let user_chat = element.remitente == remitente.value ? remitente.value : element.remitente;
     
-    let new_msg = document.createElement('div');
-    new_msg.className = class_chat;
-    let height_msg= element.contenido.length<50 ? 50 : element.contenido.length
-    new_msg.style.height= `${height_msg}px`
-
-    let messageContent = document.createElement('p');
-    messageContent.className = 'message-content';
-    messageContent.textContent = element.contenido;
-    new_msg.appendChild(messageContent);
-
-    let timestampLeft = document.createElement('div');
-    timestampLeft.className = 'message-timestamp-left';
-    timestampLeft.textContent = user_chat;
-    new_msg.appendChild(timestampLeft);
-
-    messages.appendChild(new_msg);
-      // //ir al final de los mensajes
-  const chatButton = document.querySelector('.text_msg');
-  chatButton.scrollTop = chatButton.scrollHeight;  
-
- });
   
+    let height_msg = element.contenido.length < 50 ? 50 : element.contenido.length;
+    let width_msg = element.type === 'text' ? 200 : 300;
+
+  
+    if (element.type === 'text') {
+      contentHTML = `<p class="message-content">${element.contenido}</p>`;
+    } else {
+      contentHTML = `<img class="message-content" style="height: 250px; width: 250px; border-radius: 50px;" src="./uploads/img/${element.contenido}" alt="Imagen" />`;
+    }
+
+    let new_msg_html = `
+      <div class="${class_chat}" style="height: ${height_msg}px; width: ${width_msg};">
+        ${contentHTML}
+      <div class="message-timestamp-left">${user_chat}</div>
+      </div>
+    `;
+
+    messages.innerHTML += new_msg_html;
+
+   });  
+
 })
 
 
@@ -122,3 +137,6 @@ function showNotification(message) {
     }
   }
 }
+
+
+ 
