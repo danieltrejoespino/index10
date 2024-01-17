@@ -1,19 +1,36 @@
-/* Modo claro */
-/* :root {
-  --body-bg: #FFFFFF;
-  --body-color: #000000;
-}
- @media (prefers-color-scheme: dark) {
-  :root {
-      --body-bg: #000000;
-      --body-color: #FFFFFF;
-  }
-} */
+[data-theme = "light"] {
 
-/* body {
-  background: var(--body-bg);
-  color: var(--body-color);
-} */
+  --primary: #000000;
+  --background: #ffffff;
+  --text: #000000:
+}
+
+[data-theme = "dark"] {
+
+  --primary: #ffffff;
+  --background: #3e4451;
+  --text: #ffffff; 
+}
+
+body{
+  color: var(--text);
+  background-color: var(--background);
+  font-family: 'Roboto Serif';
+  margin: 0;
+}
+
+input[type=text] {
+  background: var(--background);
+  color: var(--text);
+  border: 1px solid var(--primary);
+
+}
+ 
+#inp_chat::placeholder {
+  color: var(--text);
+} 
+
+
 
 html, body {
   height: 100%;
@@ -59,7 +76,7 @@ html, body {
 }
 
 
-
+/* 
 input[type=file] {
   width: 350px;
   max-width: 100%;
@@ -122,27 +139,25 @@ input[type=file]::file-selector-button:hover {
 
 .drop-container.drag-active .drop-title {
   color: #222;
-}
+} */
+
+
 
 
 
 
 
 /* chat */
-.chat_body{
-  height: 800px;
-  overflow: auto;
-}
 .text_msg{
-  height: 400px;
+  height: 600px;
+  width: 100%;
   overflow: auto;
+  background: var(--background);
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+
 }
-.chat_button{
-  /* height: 100px; */
-  overflow: auto;
-}
- 
- 
+
  
 .message-me {
   position: relative;
@@ -241,7 +256,9 @@ input[type=file]::file-selector-button:hover {
   right: -17px;
 }
 
-
+#inp_file{
+  display: none;
+}
 
 
 
@@ -252,3 +269,4 @@ input[type=file]::file-selector-button:hover {
 }
 
  
+

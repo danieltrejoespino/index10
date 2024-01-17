@@ -4,16 +4,13 @@
 <div class="container-fluid mt-2 px-4 text-center ">
   <div class="row gx-5 ">
     <div class="col-lg-3">
-      <div class="card m-1">
-        <div class="card-body">   
+      <div class="m-1">   
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">
               <i class="fa-solid fa-user"></i>
             </span>
             <input id="user_chat" type="text" class="form-control" placeholder="Ingresa tu nombre" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-
-        </div>
+          </div> 
       </div>      
     </div>
     <div class="col-lg-9">
@@ -23,25 +20,22 @@
           <div id="messages" class="chat_ul"></div>
         </div>
       </div>
-      <div class="card m-1 chat_button ">
-        <div class="card-body">
+      <div class="mt-2 ">
+         
           <form id="form" action="">
-            <div class="input-group mb-3">              
-              <input id="input" type="text" class="form-control" placeholder="Escribe algo...">
-              <input id="inp_file" type="file" class="form-control" placeholder="agrega img">
-              <span class="input-group-text" id="basic-addon1">
-                <button type="button" id="btn_actions_" class="btn btn-info">
+            <div class="input-group mb-3">
+              <input id="inp_chat" type="text" class="form-control" placeholder="Escribe algo...">
+              <input id="inp_file" type="file" class="form-control" placeholder="agrega img">              
+              <button type="button" id="btn_actions_" class="btn btn-info">
                   <i class="fa-solid fa-paperclip"></i>
-                </button>
-              </span>
-              <span class="input-group-text" id="basic-addon1">
-                <button type="submit" class="btn btn-success">
+              </button>
+              <button type="submit" class="btn btn-success">
                   <i class="fa-solid fa-circle-arrow-up fa-rotate-90"></i>
-                </button>
-              </span>
+              </button>
+              
             </div>
           </form>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -50,6 +44,8 @@
 
 
     <script type="text/javascript" src="/static/socket.io/client-dist/socket.io.js"></script>
+    <script src="./js/main.js"></script>
+
     <script src="./js/chat.js"></script>
  
 

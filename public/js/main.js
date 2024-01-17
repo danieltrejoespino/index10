@@ -1,4 +1,31 @@
+const swtch_theme = document.getElementById('swtch_theme')
+
+const preferedColorScheme = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'
+
+const setTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme',theme)
+  localStorage.setItem('theme',theme)
+}
+
+setTheme(localStorage.getItem('theme') || preferedColorScheme  )
+
+
+
+
+swtch_theme.addEventListener('click', () => {
+  let swtchToTheme = localStorage.getItem('theme') ===  'dark' ?  'light' : 'dark'
+  setTheme(swtchToTheme)
+  
+})
+
+
+
+
+
+
+
 console.log('importacion correcta del main');
+
 
 
 function show_alert(tipo,texto) {

@@ -1,6 +1,6 @@
 const socket = io();
 const form = document.getElementById('form');
-const input = document.getElementById('input');
+const input = document.getElementById('inp_chat');
 const messages = document.getElementById('messages');
 const btn_actions_ = document.getElementById('btn_actions_');
 const remitente = document.getElementById('user_chat');
@@ -136,5 +136,9 @@ function showNotification(message) {
   }
 }
 
+btn_actions_.addEventListener('click', () => {  
+  inp_file.click()
+})
 
- 
+
+
