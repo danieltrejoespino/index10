@@ -36,12 +36,15 @@ form.addEventListener('submit', (e) => {
     input.value = '';
   }
   const file_upload = inp_file.files[0];
+  var extension = file_upload.name.split('.').pop().toLowerCase();
+  console.log(extension);
+
   if (file_upload) {
     const reader = new FileReader();
     reader.onload = function (e) {
       const imageData = e.target.result.split(',')[1];
       // socket.emit('image', imageData);      
-      socket.emit('image', { contenido: imageData, remitente: remitente.value, type : 'img' });
+      socket.emit('image', { contenido: imageData, remitente: remitente.value, type : extension });
 
     };
     reader.readAsDataURL(file_upload);
