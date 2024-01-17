@@ -36,10 +36,12 @@ form.addEventListener('submit', (e) => {
     input.value = '';
   }
   const file_upload = inp_file.files[0];
-  var extension = file_upload.name.split('.').pop().toLowerCase();
-  console.log(extension);
+  
 
   if (file_upload) {
+    let extension = file_upload.name.split('.').pop().toLowerCase();
+    console.log(extension);
+    
     const reader = new FileReader();
     reader.onload = function (e) {
       const imageData = e.target.result.split(',')[1];
@@ -64,7 +66,7 @@ socket.on('chat message', (msg) => {
   let width_msg = msg.type === 'text' ? 200 : 300;
 
   let contentHTML;
-
+  console.warn(msg.type);
   if (msg.type === 'text') {
     contentHTML = `<p class="message-content">${msg.contenido}</p>`;
   } else {
