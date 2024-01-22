@@ -6,6 +6,7 @@ const menuItems = [
   { label: 'encriptar', href: '/encriptar' },
   // { label: 'uploads', href: '/uploads' },
   { label: 'Juegos', href: '/games' },
+  { label: 'caja', href: '/caja_ahorro' },
 ];
 
 const prueba = [  

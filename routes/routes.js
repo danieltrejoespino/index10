@@ -16,10 +16,12 @@ router.get('/chat', home.chat)
 router.get('/encriptar', home.encriptar)
 router.get('/uploads', home.uploads)
 router.get('/games', home.games)
+router.get('/caja_ahorro', home.caja_ahorro)
 
 // ORACLE
 router.get('/test', test.test)
 router.get('/index_data', index10.index10)
+router.get('/caja_ahorro_data', index10.caja_ahorro_data)
 
 // mongo
 router.get('/get_extensions', crud_extensions.get_extensions)
