@@ -1,6 +1,7 @@
 import {
   Grid,
-  html
+  html,
+  h
 } from "https://unpkg.com/gridjs?module"; 
  
  
@@ -33,25 +34,6 @@ function getData() {
       // alert('sin datos')
       return false
     }
-    
-    console.log(data);
-    
-    const objetoTransformado = data.map(item => {
-      return {             
-        "clave": item[0],
-        "nombre": item[1], 
-        "apellido_paterno": item[2], 
-        "apellido_materno": item[3], 
-        "fecha_nac": item[4], 
-        "nombre_departamento": item[5], 
-        "empresa": item[6], 
-        "equipo": item[7], 
-        "hora": item[8], 
-        "status_id": item[9],        
-        "Foto": item[10],
-      };
-    });
-    console.log(objetoTransformado);
 
     const grid = new Grid({
       search : true,
@@ -66,22 +48,31 @@ function getData() {
       // columns: Object.keys(objetoTransformado[0]),
       columns:       
       [
-          "clave", 
-          "nombre", 
-          "apellido_paterno", 
-          "apellido_materno", 
-          "fecha_nac", 
-          "nombre_departamento", 
-          "empresa", 
-          "equipo", 
-          "hora", 
-          "status_id", 
+          "NOMINA", 
+          "NOMBRE",           
+          // "fecha_nac", 
+          "EDAD",           
+          "DEPARTAMENTO", 
+          "EMPRESA", 
+          "IP", 
+          "FECHA", 
+          // "status_id", 
           { 
           name: 'Foto',          
           formatter: (_, row) => html(`
           <img src="http://172.20.1.79/fotos/Fotos/${row.cells[0].data}.jpg" style="width: 50px;"
            class="image-clickable" data-id="${row.cells[0].data}"
           >`)
+          },
+          {
+            name: 'prueba',
+            formatter: (cell, row) => {
+              return h('button', {
+                className: 'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
+                onClick: () => alert(`Editing`)
+              }, 'Edit');
+            }
+
           }
       ],
 
@@ -100,7 +91,7 @@ function getData() {
         }      
       },
       
-      data: objetoTransformado,
+      data: data,
       language: {
         'search': {
           'placeholder': 'Buscar...',

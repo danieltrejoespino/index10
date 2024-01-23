@@ -27,15 +27,21 @@ const index10  = {
       const sql = `
       SELECT      
       r.clave,
-      u.nombre,
-      u.apellido_paterno,
-      u.apellido_materno,
-      to_char(u.fecha_nac, 'dd/mm/yyyy') fecha_nac,            
-      d.nombre_departamento,
-      E.ID_EMPRESA empresa,
-      r.equipo,          
-      TO_CHAR(R.FECHA, 'DD/MM/YYYY') FECHA,
-      R.HORA HORA,
+      u.nombre||' '||u.apellido_paterno||' '||u.apellido_materno AS NOMBRE,
+      --to_char(u.fecha_nac, 'dd/mm/yyyy') fecha_nac,            
+      CASE
+			WHEN u.FECHA_NAC IS NULL THEN 'NA'
+			ELSE
+				(
+					TO_CHAR(TRUNC(MONTHS_BETWEEN(SYSDATE, u.FECHA_NAC) / 12)) || ' años ' ||
+					TO_CHAR(TRUNC(MOD(MONTHS_BETWEEN(SYSDATE, u.FECHA_NAC), 12))) || ' meses ' ||
+					TO_CHAR(FLOOR(SYSDATE - ADD_MONTHS(u.FECHA_NAC, TRUNC(MONTHS_BETWEEN(SYSDATE, u.FECHA_NAC))))) || ' días'
+				) 
+		  END AS EDAD,
+      d.nombre_departamento AS DEPARTAMENTO,
+      E.ID_EMPRESA CENTRO ,
+      r.equipo IP,          
+      TO_CHAR(R.FECHA, 'DD/MM/YYYY')||' ' ||R.HORA AS FECHA,
       u.status_id      
       FROM asistencia.registroextemp r
       left JOIN asistencia.usuarios u
