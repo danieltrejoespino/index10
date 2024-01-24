@@ -25,7 +25,8 @@ const index10  = {
     try {
       await db.initPool();      
       const sql = `
-      SELECT      
+      SELECT  
+      u.id ID,    
       r.clave,
       u.nombre||' '||u.apellido_paterno||' '||u.apellido_materno AS NOMBRE,
       --to_char(u.fecha_nac, 'dd/mm/yyyy') fecha_nac,            

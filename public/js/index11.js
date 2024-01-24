@@ -16,7 +16,8 @@ const wrapper=document.querySelector('#wrapper')
 
 
  function show_img(data) {
-      alert(data)
+      // alert(data)
+      console.log(data);
     }
 
   
@@ -48,6 +49,7 @@ function getData() {
       // columns: Object.keys(objetoTransformado[0]),
       columns:       
       [
+          "ID",
           "NOMINA", 
           "NOMBRE",           
           // "fecha_nac", 
@@ -60,20 +62,10 @@ function getData() {
           { 
           name: 'Foto',          
           formatter: (_, row) => html(`
-          <img src="http://172.20.1.79/fotos/Fotos/${row.cells[0].data}.jpg" style="width: 50px;"
-           class="image-clickable" data-id="${row.cells[0].data}"
+          <img src="http://172.20.1.79/fotos/Fotos/${row.cells[1].data}.jpg" style="width: 50px;"
+           class="image-clickable" data-id="${row.cells[1].data}"
           >`)
-          },
-          {
-            name: 'prueba',
-            formatter: (cell, row) => {
-              return h('button', {
-                className: 'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
-                onClick: () => alert(`Editing`)
-              }, 'Edit');
-            }
-
-          }
+          }          
       ],
 
       style: {
