@@ -31,6 +31,9 @@ const home = {
     },
     games : (req,res) => {
       res.render('games',{menuItems,prueba})
+    },
+    caja_ahorro : (req,res) => {
+      res.render('caja_ahorro',{menuItems,prueba})
     }      
 }
 
