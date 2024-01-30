@@ -43,7 +43,9 @@ function getData() {
         "NOMBRE": item[2], 
         "HASTA_CORTE": item[3],
         "AHORRO_S_Q": item[4],
-        "AHORRO_TOTAL": item[4]
+        "AHORRO_TOTAL": item[4],
+        
+
          
       };
     });
@@ -59,7 +61,39 @@ function getData() {
         limit: 30,
         options: [5, 20, -1],
       },
-      columns: Object.keys(objetoTransformado[0]),
+      // columns: Object.keys(objetoTransformado[0]),
+      columns: 
+      [
+        "TOP",
+        "NOMINA", 
+        "NOMBRE",           
+        // "HASTA_CORTE",  
+        { 
+          name: 'HASTA_CORTE',          
+          formatter: (_, row) => html(`
+          <p> $ ${row.cells[3].data} </p>`)
+        },         
+        // "AHORRO_S_Q", 
+        { 
+          name: 'AHORRO_S_Q',          
+          formatter: (_, row) => html(`
+          <p> $ ${row.cells[4].data} </p>`)
+        },
+        // "AHORRO_TOTAL",         
+        { 
+          name: 'AHORRO_TOTAL',          
+          formatter: (_, row) => html(`
+          <p> $ ${row.cells[5].data} </p>`)
+        },
+        { 
+        name: 'Foto',          
+        formatter: (_, row) => html(`
+        <img src="http://172.20.1.79/fotos/Fotos/${row.cells[1].data}.jpg" style="width: 50px;"
+         class="image-clickable" data-id="${row.cells[1].data}"
+        >`)
+        }          
+    ],
+      
       style: {
         table: {
           border: '3px solid #ccc'

@@ -17,11 +17,13 @@ router.get('/encriptar', home.encriptar)
 router.get('/uploads', home.uploads)
 router.get('/games', home.games)
 router.get('/caja_ahorro', home.caja_ahorro)
+router.get('/libera_nomina', home.libera_nomina)
 
 // ORACLE
 router.get('/test', test.test)
 router.get('/index_data', index10.index10)
 router.get('/caja_ahorro_data', index10.caja_ahorro_data)
+router.get('/libera_nomina_data', index10.caja_ahorro_data)
 
 // mongo
 router.get('/get_extensions', crud_extensions.get_extensions)

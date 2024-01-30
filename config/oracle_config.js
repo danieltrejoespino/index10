@@ -2,8 +2,10 @@
 const oracledb = require('oracledb');
 
 const dbConfig = {
-  user: 'asistencia',
-  password: 'ceac4d0e777',
+  // user: 'asistencia',
+  // password: 'ceac4d0e777',
+  user: 'dbo',
+  password: 'prueba',
   connectString: '(DESCRIPTION =(LOAD_BALANCE = ON)(ADDRESS_LIST =(ADDRESS =(PROTOCOL = TCP)(HOST = 192.168.1.13)(PORT = 1521))(ADDRESS =(PROTOCOL = TCP)(HOST = 192.168.1.14)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xccmtaf)))',
   poolMax: 4, 
   poolMin: 2, 

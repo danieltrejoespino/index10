@@ -155,7 +155,12 @@ const index10  = {
       await db.closePool();
     }
 
+  },
+  caja_ahorro_data : async (req,res) => {
+    console.log(req);
+    res.json(req)
   }
+
 }
 
 

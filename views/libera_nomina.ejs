@@ -1,0 +1,32 @@
+<%- include("templates/headers",{tittle:'CRUD TOOLS'}) %>
+<%- include("templates/navbar", { menuItems: menuItems}) %>
+ 
+
+<div class="d-grid gap-2 col-6 mx-auto p-5 ">        
+  <div class="form-floating">
+      <select class="form-select border border-success" id="sel_campana" aria-label="Floating label select example">                
+          <option value="hsbc" selected>HSBC/CITI/ONLINE/OPENPAY</option>
+           <option value="amexinsurance">Amexinsurance</option>
+           <option value="amexinsurancedig">Amexinsurancedig</option>
+           <option value="santanderdom">Validacion</option>
+      </select>
+      <label for="sel_campana">Selecciona la campaña a liberar</label>
+  </div>
+  <div class="form-floating">
+    <div class="input-group mb-3">     
+      <input id="inp_nomina" type="text" class="form-control" placeholder="Ingresa nomina" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    
+</div>
+<button class="btn btn-outline-success btn-lg" id="btn_liberar">LIBERAR NOMINA PARA PRUEBAS</button>        
+</div> 
+    
+
+  <script src="./js/main.js"></script>
+
+<script src="./js/libera_nomina.js" type="module"></script>
+
+<%- include("templates/footer") %>
+
+
+ 

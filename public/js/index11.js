@@ -43,8 +43,7 @@ function getData() {
       fixedHeader: true,
       height: '600px',
       pagination: {
-        limit: 30,
-        options: [5, 20, -1],
+        limit: 30
       },
       // columns: Object.keys(objetoTransformado[0]),
       columns:       
