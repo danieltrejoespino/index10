@@ -23,7 +23,7 @@ router.get('/libera_nomina', home.libera_nomina)
 router.get('/test', test.test)
 router.get('/index_data', index10.index10)
 router.get('/caja_ahorro_data', index10.caja_ahorro_data)
-router.get('/libera_nomina_data', index10.caja_ahorro_data)
+router.post('/libera_nomina_data', index10.libera_nomina)
 
 // mongo
 router.get('/get_extensions', crud_extensions.get_extensions)

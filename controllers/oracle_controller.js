@@ -156,8 +156,11 @@ const index10  = {
     }
 
   },
-  caja_ahorro_data : async (req,res) => {
-    console.log(req);
+  libera_nomina : async (req,res) => {
+    const nomina = req.body.nomina;
+    const campana = req.body.campana;
+    console.log(nomina,campana);
+
     res.json(req)
   }
 
