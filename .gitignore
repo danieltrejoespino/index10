@@ -1,4 +1,6 @@
 node_modules
 .env
 public/uploads/img
+# folder 
 queries
+config/oracle_config.js
