@@ -18,12 +18,16 @@ router.get('/uploads', home.uploads)
 router.get('/games', home.games)
 router.get('/caja_ahorro', home.caja_ahorro)
 router.get('/libera_nomina', home.libera_nomina)
+router.get('/buzonAmor', home.buzonAmor)
+router.get('/retiroAhorro', home.retiroAhorro)
 
 // ORACLE
 router.get('/test', test.test)
 router.get('/index_data', index10.index10)
 router.get('/caja_ahorro_data', index10.caja_ahorro_data)
 router.post('/libera_nomina_data', index10.libera_nomina)
+router.get('/buzonAmorData', index10.buzonAmor)
+router.get('/retiroAhorroData', index10.retiroAhorro)
 
 // mongo
 router.get('/get_extensions', crud_extensions.get_extensions)
@@ -32,4 +36,35 @@ router.get('/get_extensions', crud_extensions.get_extensions)
 router.get('/data_extensiones', get_data.extensiones)
 
 
+
+
 module.exports = router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

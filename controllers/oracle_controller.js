@@ -8,7 +8,7 @@ const test = {
       await db.initPool();      
       const sql = 'SELECT * FROM asistencia.ENTRADAS WHERE USUARIO_ID = 84419';
       const result = await queries.executeQuery(sql);
-      console.log(result);
+      // console.log(result);
       res.json(result)
     } catch (error) {
       console.error('Error:', error);
@@ -52,7 +52,7 @@ const index10  = {
       ORDER BY HORA DESC
       `;
       const result = await queries.executeQuery(sql);
-      console.log(result);
+      // console.log(result);
       res.json(result)
     } catch (error) {
       console.error('Error:', error);
@@ -73,7 +73,7 @@ const index10  = {
         FROM
         asistencia.caja_ahorros
         WHERE
-        concepto LIKE '%Ahorro al 2do corte 2023%'
+        concepto LIKE '%Ahorro al%'
         ), fechas_actuales AS (
         SELECT
         MAX(fecha2)            AS fecha,
@@ -146,7 +146,7 @@ const index10  = {
         6 DESC
       `;
       const result = await queries.executeQuery(sql);
-      console.log(result);
+      // console.log(result);
       res.json(result)
     } catch (error) {
       console.error('Error:', error);
@@ -156,12 +156,84 @@ const index10  = {
     }
 
   },
+  buzonAmor : async (req,res) => {
+    try {
+      await db.initPool();      
+      const sql = `
+      SELECT 
+      A.ID,
+      A.DE,
+      A.PARA, 
+      u.nombre || ' '|| u.apellido_paterno || ' ' || u.apellido_materno AS NOMBRE,
+      A.MENSAJE,
+      A.ENTREGADO,
+      A.VISIBLE
+      FROM ASISTENCIA.BUZONAMORES A
+      LEFT JOIN ASISTENCIA.USUARIOS u  ON U.ID_USUARIO = A.PARA
+      order by a.id desc
+      `;
+      const result = await queries.executeQuery(sql);
+      // console.log(result);
+      res.json(result)
+    } catch (error) {
+      console.error('Error:', error);
+      res.json(error)
+    } finally {
+      await db.closePool();
+    }
+
+  }, 
+  retiroAhorro : async (req,res) => {
+    try {
+      await db.initPool();      
+      const sql = ` 
+      SELECT 
+      USUARIO_ID,
+      U.NOMBRE||' '||U.APELLIDO_PATERNO||' '||U.APELLIDO_MATERNO NOMBRE,
+      AHORRO,
+      INTERES,
+      TOTAL,
+      ADEUDO,
+      AHOFOR,
+      DISPONIBLE,
+      RETIRO,
+      ABOAD,
+      NSALDO,
+      RESPUESTA,
+      DESCRIPCION
+      FROM ASISTENCIA.RETIROAHORROS R
+      LEFT JOIN ASISTENCIA.USUARIOS u ON R.USUARIO_ID = U.ID_USUARIO  
+
+
+      `;
+      const result = await queries.executeQuery(sql);
+      // console.log(result);
+      res.json(result)
+    } catch (error) {
+      // console.error('Error:', error);
+      res.json(error)
+    } finally {
+      await db.closePool();
+    }
+
+  },
   libera_nomina : async (req,res) => {
     const nomina = req.body.nomina;
     const campana = req.body.campana;
-    console.log(nomina,campana);
 
-    res.json(req)
+    await db.initPool();
+    try {
+      // Llama al nuevo método ejecutarProcedimiento con los parámetros necesarios
+      const resultado = await queries.ejecutarProcedimiento(nomina, campana);
+      
+      // Puedes hacer algo con el resultado si es necesario
+      res.json({ message: resultado });
+    } catch (error) {
+      console.error('Error en el controlador:', error);
+      res.status(500).json({ error: 'Error en el servidor' });
+    }
+    await db.closePool();
+    
   }
 
 }

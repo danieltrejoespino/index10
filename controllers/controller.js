@@ -37,6 +37,12 @@ const home = {
     },
     libera_nomina : (req,res) => {
       res.render('libera_nomina',{menuItems,prueba})
+    },
+    buzonAmor : (req,res) => {
+      res.render('buzonAmor',{menuItems,prueba})
+    },
+    retiroAhorro : (req,res) => {
+      res.render('retiroAhorro',{menuItems,prueba})
     }      
 }
 
