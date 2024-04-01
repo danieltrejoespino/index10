@@ -46,7 +46,7 @@ Accede a la aplicación en tu navegador o a través de herramientas como Postman
 Navega por las diferentes vistas del menú principal y utiliza las funciones correspondientes según sea necesario.
 
 
-##Contribución
+## Contribución
 
 ¡Tu contribución es bienvenida! Si deseas contribuir a este proyecto, sigue estos pasos:
 
@@ -57,7 +57,7 @@ Navega por las diferentes vistas del menú principal y utiliza las funciones cor
     Crea un pull request en el repositorio original.
 
 
-##Contacto
+## Contacto
 
 Si tienes alguna pregunta o sugerencia sobre la aplicación, no dudes en ponerte en contacto con el equipo de desarrollo en correo electrónico o a través de GitHub Issues.
 
