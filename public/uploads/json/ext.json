@@ -255,6 +255,51 @@
     "unidad": "Openpay"
   },
   {
+    "extension": 1054,
+    "usuario": "Recepcion ADT",
+    "unidad": "ADT"
+  },
+  {
+    "extension": 1513,
+    "usuario": "Andres Baldovino",
+    "unidad": "IM"
+  },
+  {
+    "extension": 1053,
+    "usuario": "Napoleon Ramirez",
+    "unidad": "OpenPay"
+  },
+  {
+    "extension": 1044,
+    "usuario": "Beatriz Arvizu",
+    "unidad": "OP"
+  }, 
+  {
+    "extension": 1530,
+    "usuario": "Brenda Olvera",
+    "unidad": "Validacion online"
+  },
+  {
+    "extension": 1071-1078,
+    "usuario": "Polis",
+    "unidad": "Caseta"
+  },
+  {
+    "extension": 1175-1039,
+    "usuario": "Humberto trigger",
+    "unidad": "IM MC"
+  },
+  {
+    "extension": 1061,
+    "usuario": "Lorena Alvarez",
+    "unidad": "ADT"
+  },
+  {
+    "extension": 1101,
+    "usuario": "Redes Gral",
+    "unidad": "Redes"
+  },
+  {
     "extension": 1019,
     "usuario": "Victor",
     "unidad": ""
